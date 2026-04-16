@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0D1117;
+  --bg-surface: #161B22;
+  --bg-elevated: #1C2333;
+  --border: #2D3A4A;
+  --text-primary: #E6EDF3;
+  --text-secondary: #8B949E;
+  --text-muted: #484F58;
+  --accent: #00D4AA;
+  --accent-dim: #00D4AA22;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --success: #10B981;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Syne', sans-serif;
+}
+
+@layer components {
+  .card {
+    @apply bg-[#161B22] border border-[#2D3A4A] rounded-xl p-6 transition-all duration-200;
+  }
+  .card:hover {
+    @apply border-[#00D4AA22] -translate-y-0.5 shadow-[0_4px_24px_rgba(0,0,0,0.18)];
+  }
+  .btn-primary {
+    @apply bg-[#00D4AA] text-black font-bold py-2 px-4 rounded-lg transition-all hover:opacity-90 active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-[#1C2333] text-[#E6EDF3] border border-[#2D3A4A] font-medium py-2 px-4 rounded-lg transition-all hover:bg-[#2D3A4A];
+  }
+  .input-field {
+    @apply bg-[#0D1117] border border-[#2D3A4A] text-[#E6EDF3] rounded-lg p-2 focus:outline-none focus:border-[#00D4AA] transition-colors;
+  }
+}
